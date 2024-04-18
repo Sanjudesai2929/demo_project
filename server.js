@@ -23,7 +23,7 @@ const toPhoneNumber = '+91 98799 86027'; // replace with the actual phone number
 
 // The message you want to send
 const messageBody = 'Hello, this is a test message from Twilio!';
-const statusCallbackUrl = 'http://localhost:4000/twilio/status'; // replace with your server's URL
+const statusCallbackUrl = 'https://demo-project-w97j.onrender.com/twilio/status'; // replace with your server's URL
 
 // Send the message
 
