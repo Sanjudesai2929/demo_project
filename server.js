@@ -37,7 +37,7 @@ app.post('/twilio/status', (req, res) => {
 
   // You can handle the status update here as needed
 
-  res.status(200).end();
+  res.status(200).end(`Received status update for message SID ${messageSid}: ${messageStatus}`);
 });
 app.get("/send",(req,res)=>{
   client.messages
@@ -48,7 +48,7 @@ app.get("/send",(req,res)=>{
     statusCallback: statusCallbackUrl
   })
   .then((message) => res.send(message))
-  .catch((error) => console.error(`Error sending message: ${error.message}`));
+  .catch((error) => res.send(error.message));
 })
 app.get('/', (req, res) => {
 
