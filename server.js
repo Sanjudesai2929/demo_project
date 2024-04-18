@@ -53,7 +53,7 @@ app.get("/send",(req,res)=>{
 app.get('/', (req, res) => {
 
   
-    res.status(200).end("rf");
+    res.status(200).end("hello");
   });
 
 // Start the server
