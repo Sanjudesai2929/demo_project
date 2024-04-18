@@ -7,10 +7,10 @@ const port = 4000; // Replace with your desired port
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const twilio = require('twilio');
-
+require('dotenv').config();
 // Your Twilio Account SID and Auth Token from twilio.com/console
-const accountSid = 'AC4a90824412dfa75796fba726ccbce1c3';
-const authToken = '522ece79379d1de88899722b9325b937';
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
 
 // Create a Twilio client
 const client = new twilio(accountSid, authToken);
