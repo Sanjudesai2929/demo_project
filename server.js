@@ -38,6 +38,7 @@ console.log("twiml:::",twiml)
   res.type('text/xml').send(twiml.toString());
 });
 app.get("/send",(req,res)=>{
+  console.log("helllll")
   client.messages
   .create({
     body: messageBody,
