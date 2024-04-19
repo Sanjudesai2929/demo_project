@@ -45,7 +45,7 @@ app.get("/send",(req,res)=>{
     body: messageBody,
     from: twilioPhoneNumber,
     to: toPhoneNumber,
-    statusCallback: statusCallbackUrl
+
   })
   .then((message) => res.send(message))
   .catch((error) => res.send(error.message));
