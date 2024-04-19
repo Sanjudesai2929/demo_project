@@ -30,6 +30,7 @@ const statusCallbackUrl = 'https://demo-project-w97j.onrender.com/twilio/status'
 
 // Endpoint to handle Twilio status callbacks
 app.post('/twilio/status', (req, res) => {
+  console.log("hello")
   const twiml = new MessagingResponse();
 
   twiml.message('The Robots are coming! Head for the hills!');
