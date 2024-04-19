@@ -7,6 +7,7 @@ const port = 4000; // Replace with your desired port
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const twilio = require('twilio');
+const { MessagingResponse } = require('twilio').twiml;
 require('dotenv').config();
 // Your Twilio Account SID and Auth Token from twilio.com/console
 const accountSid = "AC4a90824412dfa75796fba726ccbce1c3";
@@ -29,15 +30,11 @@ const statusCallbackUrl = 'https://demo-project-w97j.onrender.com/twilio/status'
 
 // Endpoint to handle Twilio status callbacks
 app.post('/twilio/status', (req, res) => {
-    console.log("hh");
-  const messageSid = req.body.MessageSid;
-  const messageStatus = req.body.MessageStatus;
+  const twiml = new MessagingResponse();
 
-  console.log(`Received status update for message SID ${messageSid}: ${messageStatus}`);
-
-  // You can handle the status update here as needed
-
-  res.status(200).end(`Received status update for message SID ${messageSid}: ${messageStatus}`);
+  twiml.message('The Robots are coming! Head for the hills!');
+console.log("twiml:::",twiml)
+  res.type('text/xml').send(twiml.toString());
 });
 app.get("/send",(req,res)=>{
   client.messages
