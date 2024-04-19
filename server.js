@@ -28,7 +28,7 @@ const statusCallbackUrl = 'https://demo-project-w97j.onrender.com/twilio/status'
 
 // Send the message
 
-// Endpoint to handle Twilio status callbacks
+// Endpoint to handle Twilio status chow to check twilio webhook call or notallbacks
 app.post('/twilio/status', (req, res) => {
   console.log("hello")
   const twiml = new MessagingResponse();
@@ -43,6 +43,7 @@ app.get("/send",(req,res)=>{
   .create({
     body: messageBody,
     from: twilioPhoneNumber,
+    messagingServiceSid:"MG082dca8fd8e0137c6bd763d9a933cb66",
     to: toPhoneNumber,
 
   })
